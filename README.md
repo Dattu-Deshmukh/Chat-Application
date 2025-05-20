@@ -14,7 +14,7 @@ A simple Java-based Chat Application for real-time messaging.
 - Java 8 or newer
 - [Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/) (if your project uses one)
 
-### Installation
+### Installation(Method1)
 
 1. **Clone the repository:**
    ```bash
@@ -22,26 +22,79 @@ A simple Java-based Chat Application for real-time messaging.
    cd Chat-Application
    ```
 
-2. **Build the project:**
-   - If using Maven:
-     ```bash
-     mvn clean install
-     ```
-   - If using Gradle:
-     ```bash
-     gradle build
-     ```
-   - Or, if you are compiling manually:
-     ```bash
-     javac -d bin src/*.java
-     ```
+## Running(Manual Method)
 
-3. **Run the application:**
-   ```bash
-   java -cp bin MainClassName
-   ```
-   Replace `MainClassName` with the actual main class for your project.
+ 1. **Compile Your Code**
 
+Open a terminal in your project root and run:
+```sh
+javac -d out "chatting Application\src\chatting\application\Client.java" "chatting Application\src\chatting\application\Server.java"
+```
+
+ 2. **Copy the Icons Folder**
+
+Copy the `icons` folder to your output directory:
+```sh
+xcopy "chatting Application\src\icons" out\icons /E /I /Y
+```
+
+ 3. **Run the Server**
+
+Open a terminal and run:
+```sh
+java -cp out chatting.application.Server
+```
+
+ 4. **Run the Client**
+
+Open another terminal and run:
+```sh
+java -cp out chatting.application.Client
+```
+
+> **Note:**  
+> Always start the server first, then the client.  
+> Only use the "Send" button after the client is connected.
+
+---
+
+## Packaging for Distribution
+
+### **Create Executable JAR Files**
+
+**For the Server:**
+```sh
+jar --create --file Server.jar --main-class chatting.application.Server -C out .
+```
+
+**For the Client:**
+```sh
+jar --create --file Client.jar --main-class chatting.application.Client -C out .
+```
+
+- Place the `icons` folder in the same directory as your JAR files, or package them inside the JAR if needed.
+
+---
+
+ How to Run the JARs
+
+- **Start the server:**  
+  ```sh
+  java -jar Server.jar
+  ```
+- **Start the client:**  
+  ```sh
+  java -jar Client.jar
+  ```
+
+---
+
+ Notes
+
+- Users must have Java installed to run the JARs.
+- For creating a Windows `.exe`, use [Launch4j](http://launch4j.sourceforge.net/).
+
+---
 ### Troubleshooting
 
 **ClassNotFoundException**
@@ -55,3 +108,4 @@ If you still have issues, please provide the full error message for detailed hel
 ## Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
+
