@@ -6,7 +6,6 @@ A simple Java-based Chat Application for real-time messaging.
 
 - Real-time text chat between multiple users
 - Simple and intuitive user interface
-- [Add more features here based on your implementation]
 
 ## Getting Started
 
@@ -14,7 +13,6 @@ A simple Java-based Chat Application for real-time messaging.
 
 - Java 8 or newer
 - [Maven](https://maven.apache.org/) or [Gradle](https://gradle.org/) (if your project uses one)
-- [Any additional dependencies here]
 
 ### Installation
 
@@ -57,7 +55,3 @@ If you still have issues, please provide the full error message for detailed hel
 ## Contributing
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-
-[Add license information here]
